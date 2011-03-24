@@ -1,23 +1,33 @@
 <%@ page contentType="text/html; charset=euc-jp" %>
 <%
-// 入力された情報を出力する
+// 鐃緒申鐃熟わ申鐃曙た鐃緒申鐃緒申鐃緒申鐃緒申鐃熟わ申鐃緒申
 
-// パラメータを取得
+// 鐃術ワ申鐃潤ー鐃緒申鐃緒申鐃緒申鐃緒申
 String name = request.getParameter("name");
 String mailadr = request.getParameter("mailadr");
 
-// 文字コードの変換を行う
+// 文鐃緒申鐃緒申鐃緒申鐃宿わ申鐃術器申鐃緒申鐃峻わ申
 name = new String(name.getBytes("8859_1"), "EUC_JP");
 mailadr = new String(mailadr.getBytes("8859_1"), "EUC_JP");
+
+//
+  String filename  = "fileout.txt";
+  String path = request.getRealPath("./");
+
+  FileWriter fileno = new FileWriter(path + filename);
+  fileno.write(name + "\n");
+  fileno.write(email + "\n");
+  fileno.close();
+
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head><title>入力された情報を出力する</title></head>
+<head><title>鐃緒申鐃熟わ申鐃曙た鐃緒申鐃緒申鐃緒申鐃緒申鐃熟わ申鐃緒申</title></head>
 <body>
-<p>-- 入力された情報を出力する --</p>
+<p>-- 鐃緒申鐃熟わ申鐃曙た鐃緒申鐃緒申鐃緒申鐃緒申鐃熟わ申鐃緒申 --</p>
 <p><ul>
-<li>名前: <%= name %>
-<li>メールアドレス: <%= mailadr %>
+<li>名鐃緒申: <%= name %>
+<li>鐃潤ー鐃暑ア鐃宿レス: <%= mailadr %>
 </ul></p>
 </body>
 </html>
